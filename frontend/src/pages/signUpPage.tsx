@@ -1,6 +1,7 @@
 import { useState } from "react";
+import axios from "axios";
 
-export const SignInComponent = () => {
+export const SignUpComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName,setFname]=useState("");
@@ -48,12 +49,15 @@ export const SignInComponent = () => {
   
         <button 
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
-          onClick={() => {
-            console.log(email);
-            console.log(password);
-            console.log(firstName);
-            console.log(lastName);
-          }}
+          onClick={async () => {
+            await axios
+              .post("http://localhost:3000/signin", {
+                email,
+                password,
+              })
+              .then((res) => {
+                console.log(res);
+              });}}
         >
           Create an account
         </button>

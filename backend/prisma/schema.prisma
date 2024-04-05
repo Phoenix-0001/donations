@@ -19,5 +19,13 @@ model User {
   lastName String?
   email String @unique
   password String
+  Donation Donation[]
+}
+
+model Donation {
+  id Int @id @default(autoincrement())
+  item String
+  userId Int
+  User User @relation(fields: [userId], references: [id])
 }
 

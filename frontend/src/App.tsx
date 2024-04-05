@@ -1,15 +1,17 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { SignUpComponent } from "./pages/signInPage";
-import { SignInComponent } from "./pages/signUpPage";
+import { SignUpComponent } from "./pages/signUpPage";
+import { SignInComponent } from "./pages/signInPage";
+import { LandingPage } from "./pages/landingPage";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/signin" element={<SignUpComponent />} />
-          <Route path="/signup" element={<SignInComponent />} />
+          <Route path="/dashboard" element={<LandingPage/>}/>
+          <Route path="/signin" element={<SignInComponent />} />
+          <Route path="/signup" element={<SignUpComponent />} />
         </Routes>
       </BrowserRouter>
     </div>

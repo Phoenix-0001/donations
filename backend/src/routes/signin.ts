@@ -6,8 +6,6 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const body = req.body;
-  const firstName = body.firstName;
-  const lastName = body.lastName;
   const email = body.email;
   const password = body.password;
 
@@ -17,16 +15,10 @@ router.post("/", async (req, res) => {
       email,
     },
   });
-  if (!userExist) return res.status(403).json({ mess: "User already exists" });
-  const createUser = await prisma.user.create({
-    data: {
-      firstName,
-      lastName,
-      email,
-      password,
-    },
-  });
-  if (!createUser) return res.status(400).json("Erro while making the user!");
-  res.status(200).json(body);
+  if (!userExist)
+    return res.status(404).json({ mess: "The user doesn't exist" });
+  if (!(userExist?.password === password))
+    return res.status(404).json({ mess: "user not found!" });
+  res.status(200).json(userExist);
 });
 module.exports = router;
