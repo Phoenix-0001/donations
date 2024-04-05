@@ -10,7 +10,7 @@ export const SignUpComponent = () => {
         <div className="pt-1">Enter your details</div>
         <div className="flex flex-col items-center">
           <div className="flex flex-row justify-between w-full">
-            NAME
+            Email
             <input
               type="email"
               className="border-2 w-4/5"
@@ -21,7 +21,7 @@ export const SignUpComponent = () => {
           </div>
 
           <div className="flex flex-row justify-between w-full">
-            Email
+            Password
             <input
               type="password"
               className="border-2 w-4/5"
