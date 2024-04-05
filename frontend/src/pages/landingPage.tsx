@@ -1,4 +1,8 @@
+import {  useNavigate } from "react-router-dom";
+
+
 export const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="">
       <div className="flex justify-between p-6 font-semibold">
@@ -21,11 +25,21 @@ export const LandingPage = () => {
           </div>
         </div>
         <div className="flex gap-11 ml-[385px] mt-9">
-          <button className="px-7 py-3 bg-green-500 rounded-full font-semibold">
-            Sign In
+          <button
+            className="px-7 py-3 bg-green-500 rounded-full font-semibold hover:bg-green-600 transition-all hover:text-white"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Sign Up
           </button>
-          <button className="px-7 py-2 border-4 border-green-500 rounded-full ">
-            Login
+          <button
+            className="px-7 py-2 border-4 border-green-500 rounded-full  hover:bg-green-500 font-semibold transition-all hover:text-white"
+            onClick={() => {
+              navigate("/signin");
+            }}
+          >
+            Sign In
           </button>
         </div>
       </div>
