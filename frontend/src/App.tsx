@@ -6,10 +6,11 @@ function App() {
   const [password, setPassword] = useState("");
   return (
     <div className="flex justify-center align-middle mt-96">
-      <div className="w-2/5 border-2">
-        signin
-        <div>Enter your details</div>
-        <div className="flex flex-col">
+      <div className="w-2/5 border-2 px-5 pt-7 pb-5">
+        SIGN IN
+        <div className="pt-1">Enter your details</div>
+        <div className="flex flex-row">
+          NAME
           <input
             type="email"
             className="border-2"
@@ -17,6 +18,10 @@ function App() {
               setEmail(e.target.value);
             }}
           />
+        </div>
+
+        <div>
+          Email
           <input
             type="password"
             className="border-2"
@@ -25,6 +30,7 @@ function App() {
             }}
           />
         </div>
+
         <div>
           <div>Already have an account?</div>
           <button
@@ -38,6 +44,7 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 
