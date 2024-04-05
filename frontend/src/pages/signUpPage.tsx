@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const SignUpComponent = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFname] = useState("");
@@ -59,6 +61,7 @@ export const SignUpComponent = () => {
               })
               .then((res) => {
                 console.log(res);
+                if (res.status === 200) navigate("/firstInter")
               });
           }}
         >

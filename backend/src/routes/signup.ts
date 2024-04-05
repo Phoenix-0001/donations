@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
       email,
     },
   });
-  if (!userExist) return res.status(403).json({ mess: "User already exists" });
+  if (userExist) return res.status(403).json({ mess: "User already exists" });
   const createUser = await prisma.user.create({
     data: {
       firstName,

@@ -1,6 +1,9 @@
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const SignInComponent = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -27,12 +30,17 @@ export const SignInComponent = () => {
         </div>
 
         <div className="flex justify-between items-center mb-4">
-          <div>Don't have an account?</div>
+          <div className="hover:cursor-pointer text-sky-600 hover:text-blue-700" onClick={() => {
+            navigate("/signup")
+          }}>Don't have an account?</div>
           <button
             className="w-3/5 bg-green-600 text-white py-2 rounded hover:bg-green-700"
-            onClick={() => {
-              console.log(email);
-              console.log(password);
+            onClick={async() => {
+              axios.post("http://localhost:3000/signin", {
+                email,password
+              }).then((res) => {
+                if (res.status === 200) navigate("/firstInter");
+              });
             }}
           >
             Sign In

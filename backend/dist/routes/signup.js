@@ -29,7 +29,7 @@ router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             email,
         },
     });
-    if (!userExist)
+    if (userExist)
         return res.status(403).json({ mess: "User already exists" });
     const createUser = yield prisma.user.create({
         data: {
