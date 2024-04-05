@@ -7,7 +7,7 @@ export const SignInComponent = () => {
   const [lastName,setLname]=useState("");
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-80 border-2 px-5 py-7 ">
+      <div className="w-80 border-2 px-5 py-7 shadow-lg">
         <h2 className="text-2xl font-bold mb-3">SIGN UP</h2>
         <p className="text-sm mb-3">Enter your details</p>
         <div className="mb-4">
