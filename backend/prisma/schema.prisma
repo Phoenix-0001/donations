@@ -29,3 +29,11 @@ model Donation {
   User User @relation(fields: [userId], references: [id])
 }
 
+model DonationItems {
+  id Int @id @default(autoincrement())
+  item String
+  Community String
+  person String
+  need String
+}
+
