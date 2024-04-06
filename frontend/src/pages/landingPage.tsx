@@ -1,44 +1,43 @@
 import { Header } from "@/components/ui/header";
-import {  useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <div >
-      <Header Input={"PFQ"}/>
+    <div className="">
+      <Header Input={"FAQ"}/>
       <div className="flex justify-center">
-      <div className="flex justify-center flex-col ]">
-        <div className= " flex justify-center flex-col w-[1100px] pl-[45px]">
-          <div className="text-9xl font-semibold mt-[150px]">
-            SERVICE'S <span className="text-green-500">NAME</span>{" "}
+        <div className="flex justify-center flex-col ]">
+          <div className="flex justify-center flex-col items-center  ">
+            <div className="text-9xl font-semibold mt-[150px]">
+              SHARE<span className="text-green-500">WAVE</span>{" "}
             </div>
             <div className="flex justify-center">
-          <div className="w-3/5 text-center mt-6 text-gray-500">
-            "Let your treasures of yesterday become the blessings of tomorrow.
-            Donate today, and watch your old belongings weave new stories in the
-            tapestry of others' lives."
+              <div className="w-3/5 text-center mt-6 text-gray-500">
+                "Let your treasures of yesterday become the blessings of
+                tomorrow. Donate today, and watch your old belongings weave new
+                stories in the tapestry of others' lives."
               </div>
             </div>
-        </div>
-        <div className="flex gap-11 ml-[385px] mt-9">
-          <button
-            className="px-7 py-3 bg-green-500 rounded-full font-semibold hover:bg-green-600 transition-all hover:text-white"
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            Sign Up
-          </button>
-          <button
-            className="px-7 py-2 border-4 border-green-500 rounded-full  hover:bg-green-500 font-semibold transition-all hover:text-white"
-            onClick={() => {
-              navigate("/signin");
-            }}
-          >
-            Sign In
-          </button>
-        </div>
+          </div>
+          <div className="flex gap-11 justify-center mt-9">
+            <button
+              className="px-7 py-3 bg-green-500 rounded-full font-semibold hover:bg-green-600 transition-all hover:text-white"
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              className="px-7 py-2 border-4 border-green-500 rounded-full  hover:bg-green-500 font-semibold transition-all hover:text-white"
+              onClick={() => {
+                navigate("/signin");
+              }}
+            >
+              Sign In
+            </button>
+          </div>
         </div>
       </div>
       <div>

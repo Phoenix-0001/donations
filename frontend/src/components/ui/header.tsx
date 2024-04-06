@@ -27,7 +27,7 @@ export const Header = ({ Input }) => {
         </div>
         <div
           className={
-            Input !== "PFQ" ? "bg-red-600 px-8 py-3 rounded-xl text-white" : ""
+            Input !== "FAQ" ? "bg-red-600 px-8 py-3 rounded-xl text-white" : ""
           }
           onClick={() => {
             navigate("/");
