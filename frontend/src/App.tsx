@@ -8,6 +8,7 @@ import { Dashboard } from "./pages/dashboard";
 import { RecoilRoot } from "recoil";
 import { CommunityLogin } from "./pages/communityLogin";
 import { CommunityPage } from "./pages/commPage";
+import { ErrorPage } from "./pages/errorPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/communitylogin" element={<CommunityLogin />} />
             <Route path="/commPage" element={<CommunityPage />} />
+            <Route path="/error" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

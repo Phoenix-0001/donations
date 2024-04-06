@@ -3,12 +3,14 @@ import { Header } from "@/components/ui/header";
 import {  donation } from "@/store/atoms";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {  useRecoilValue } from "recoil";
 
 
 
 export const Dashboard = () => {
+  const navigate = useNavigate()
   const item = useRecoilValue(donation);
   const [donations, setDonations] = useState([]);
   useEffect(() => {
@@ -16,10 +18,10 @@ export const Dashboard = () => {
       item
     }).then((res) => {
        setDonations(res.data);
-      console.log(res)
-    });
+      if (res.data.length === 0) navigate("/error");
+      console.log(res.data)
+    })
   }, [])
-  console.log("owncw")
   console.log(donations);
 
 
