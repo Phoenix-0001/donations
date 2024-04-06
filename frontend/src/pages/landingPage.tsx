@@ -13,7 +13,8 @@ export const LandingPage = () => {
         </div>
         <div>FAQ</div>
       </div>
-      <div className="flex justify-center flex-col ml-[330px]">
+      <div></div>
+      <div className="flex justify-center flex-col ml-[320px]">
         <div className="flex justify-center flex-col align-middle">
           <div className="text-9xl font-semibold mt-[150px]">
             SERVICE'S <span className="text-green-500">NAME</span>{" "}
