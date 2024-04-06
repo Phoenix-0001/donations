@@ -6,6 +6,8 @@ import { LandingPage } from "./pages/landingPage";
 import { FirstInterPage } from "./pages/firstInter";
 import { Dashboard } from "./pages/dashboard";
 import { RecoilRoot } from "recoil";
+import { CommunityLogin } from "./pages/communityLogin";
+import { CommunityPage } from "./pages/commPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/signup" element={<SignUpComponent />} />
             <Route path="/firstInter" element={<FirstInterPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/communitylogin" element={<CommunityLogin />} />
+            <Route path="/commPage" element={<CommunityPage />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

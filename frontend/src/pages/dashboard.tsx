@@ -1,8 +1,9 @@
 import { DonationComp } from "@/components/ui/donationComp";
+import { Header } from "@/components/ui/header";
 import {  donation } from "@/store/atoms";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import {  useRecoilValue } from "recoil";
 
 
@@ -20,26 +21,26 @@ export const Dashboard = () => {
   }, [])
   console.log("owncw")
   console.log(donations);
-  const navigate = useNavigate();
+
 
   return (
     <div>
       <div>
-        <div className="flex justify-between p-6 font-semibold">
-          <div className="flex gap-4">
-            <div>HOME</div>
-            <div>CONTACT</div>
-            <div>COMMUNITY LOGIN</div>
-          </div>
-          <div className="bg-red-600 px-8 py-3 rounded-xl text-white" onClick={() => {
-            navigate("/")
-          }} >Logout</div>
-        </div>
+       <Header Input={"Logout"}/>
       </div>
-      <div>There are people who love to accept your Products</div>
+      <div className="text-7xl w-3/5 text-center mx-auto font-semibold mb-8 mt-5">
+        There are people who love to accept your <span className="text-green-500">Donations</span>
+      </div>
       <div className=" grid grid-cols-3 grid-rows-3 w-full p-8 gap-5">
         {donations.map((donation) => {
-          return <DonationComp need={donation.need} reciever={donation.person} item={donation.item} orgName={donation.Community}/>
+          return (
+            <DonationComp
+              need={donation.need}
+              reciever={donation.person}
+              item={donation.item}
+              orgName={donation.Community}
+            />
+          );
         })}
       </div>
     </div>

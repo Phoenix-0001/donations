@@ -18,28 +18,19 @@ const app = (0, express_1.default)();
 const cors = require("cors");
 const router = express_1.default.Router();
 router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const prisma = new client_1.PrismaClient();
-        const donateItem = req.body.item; // Assuming the item property is directly accessible in the request body
-        const donationRequired = yield prisma.donationItems.findMany({
-            where: {
-                item: {
-                    contains: donateItem, // Using Prisma's query builder to prevent SQL injection
-                },
-            },
-            select: {
-                item: true,
-                Community: true,
-                person: true,
-                need: true,
-            },
-        });
-        yield prisma.$disconnect(); // Closing Prisma client connection
-        res.json(donationRequired);
-    }
-    catch (error) {
-        console.error("Error:", error);
-        res.status(400).json({ error: "Internal Server Error" });
-    }
+    const body = req.body;
+    const email = body.email;
+    const password = body.password;
+    const prisma = new client_1.PrismaClient();
+    const userExist = yield prisma.community.findFirst({
+        where: {
+            email,
+        },
+    });
+    if (!userExist)
+        return res.status(404).json({ mess: "The user doesn't exist" });
+    if (!((userExist === null || userExist === void 0 ? void 0 : userExist.password) === password))
+        return res.status(404).json({ mess: "user not found!" });
+    res.status(200).json(userExist);
 }));
 module.exports = router;

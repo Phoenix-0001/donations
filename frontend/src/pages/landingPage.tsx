@@ -1,18 +1,12 @@
+import { Header } from "@/components/ui/header";
 import {  useNavigate } from "react-router-dom";
 
 
 export const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="">
-      <div className="flex justify-between p-6 font-semibold">
-        <div className="flex gap-4">
-          <div>HOME</div>
-          <div>CONTACT</div>
-          <div>COMMUNITY LOGIN</div>
-        </div>
-        <div>FAQ</div>
-      </div>
+    <div >
+      <Header Input={"PFQ"}/>
       <div className="flex justify-center">
       <div className="flex justify-center flex-col ]">
         <div className= " flex justify-center flex-col w-[1100px] pl-[45px]">
