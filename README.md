@@ -1,6 +1,7 @@
 # ShareWave
 
 Welcome to ShareWave - your platform for making a difference!
+![WhatsApp Image 2024-04-10 at 22 53 32_4054d701](https://github.com/Phoenix-0001/donations/assets/149677560/3f700ce2-e283-41c9-9284-302f30c3b65c)
 
 ## Overview
 
